@@ -28,7 +28,17 @@ setIsLoading(true) //we set loading to true here to display the balls in the ass
     // send POST request to local server with the conversation payload for chat response 
     // "http://localhost:8088/chat", {//i will fill in this function later
 // it is necessary to temporarily use 'loading' as a message until we get a reponse from the server if we want to display the ellipses 
-  setConversation([
+
+fetch("http://localhost:8088/chat", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(conversation)
+  })
+      .then(res => res.json())
+
+setConversation([
     ...conversation, 
     { role: "assistant", message: "Loading" }
   ]);
