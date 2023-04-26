@@ -19,36 +19,39 @@ function App() {
     if (!newMessage) {
       return;
     }
-setIsLoading(true) //we set loading to true here to display the balls in the assistant message bubble while we wait for the response from the server
-    setConversation([
-      ...conversation,
-      { role: "user", message: newMessage }
-        ]);
+    setIsLoading(true); //we set loading to true here to display the balls in the assistant message bubble while we wait for the response from the server
+    setConversation([...conversation, { role: "user", message: newMessage }]);
 
-    // send POST request to local server with the conversation payload for chat response 
+    // send POST request to local server with the conversation payload for chat response
     // "http://localhost:8088/chat", {//i will fill in this function later
-// it is necessary to temporarily use 'loading' as a message until we get a reponse from the server if we want to display the ellipses 
+    // it is necessary to temporarily use 'loading' as a message until we get a response from the server if we want to display the ellipses
 
-fetch("http://localhost:8088/chat", {
+    // setConversation([
+    //   ...conversation,
+    //   { role: "assistant", message: "Loading" },
+    // ]);
+
+    // Perhaps we should look closely here?
+    fetch("http://localhost:8088/chat", {
       method: "POST",
       headers: {
-          "Content-Type": "application/json"
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(conversation),
       },
-      body: JSON.stringify(conversation)
-  })
-      .then(res => res.json())
+    })
+      .then((res) => res.json())
+      .then((dataRes) => {
+        setConversation([
+          ...conversation,
+          { role: "assistant", message: dataRes },
+        ]);
+      });
 
-setConversation([
-    ...conversation, 
-    { role: "assistant", message: "Loading" }
-  ]);
-
-  //then i will set the assistant message in this conversation with the actual response from the assistant  
-
-
-
-
-  }; 
+    // We need to do is take the response from api and update the conversation with the response in the correct format.
+    //then i will set the assistant message in this conversation with the actual response from the assistant
+  };
 
   const showMessages = () => {
     return conversation.map((message, index) => (
