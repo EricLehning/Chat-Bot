@@ -6,8 +6,8 @@ const data = {
   pText: "I'm a cute chatbot!",
   p2Text: "I can help you with your horoscope",
   conversation: [
-    { role: "assistant", message: "Hello, how can I help you today?" },
-    { role: "user", message: "I need a horoscope reading" },
+    { role: "assistant", content: "Hello, how can I help you today?" },
+    { role: "user", content: "I need a horoscope reading" },
   ],
   isLoading: false
 };
@@ -20,7 +20,7 @@ function App() {
       return;
     }
     setIsLoading(true); //we set loading to true here to display the balls in the assistant message bubble while we wait for the response from the server
-    setConversation([...conversation, { role: "user", message: newMessage }]);
+    setConversation([...conversation, { role: "user", content: newMessage }]);
 
     // send POST request to local server with the conversation payload for chat response
     // "http://localhost:8088/chat", {//i will fill in this function later
@@ -35,17 +35,15 @@ function App() {
     fetch("http://localhost:8088/chat", {
       method: "POST",
       headers: {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(conversation),
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(conversation),
     })
       .then((res) => res.json())
       .then((dataRes) => {
         setConversation([
           ...conversation,
-          { role: "assistant", message: dataRes },
+          { role: "assistant", content: dataRes },
         ]);
       });
 
@@ -57,7 +55,7 @@ function App() {
     return conversation.map((message, index) => (
       <MessageBubble
         key={index}
-        message={message.message}
+        message={message.content}
         role={message.role}
         isLoading={isLoading}
       />
