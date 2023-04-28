@@ -42,13 +42,14 @@ body,
 }
 .app-container .header {
   -webkit-animation: fade 1s ease 1.5s both;
-          animation: fade 1s ease 1.5s both;
+  animation: fade 1s ease 1.5s both;
   z-index: 20;
   text-align: right;
   flex: 1 0 20vw;
   margin: 0 5vw 5vw 0;
   margin-top: auto;
-  text-shadow: 1px 2px 0px rgba(244, 59, 71, 0.4), 3px 2px 0px rgba(244, 59, 71, 0.4), 2px 3px 0px rgba(244, 59, 71, 0.4);
+  text-shadow: 1px 2px 0px rgba(244, 59, 71, 0.4),
+    3px 2px 0px rgba(244, 59, 71, 0.4), 2px 3px 0px rgba(244, 59, 71, 0.4);
   position: relative;
 }
 .app-container .header .header-img {
@@ -63,7 +64,7 @@ body,
 }
 .app-container .chat-container {
   -webkit-animation: fade 0.5s ease 0.2s both;
-          animation: fade 0.5s ease 0.2s both;
+  animation: fade 0.5s ease 0.2s both;
   transform: perspective(100vh) rotateY(-7deg);
   border-radius: 12px;
   box-shadow: 10px 5px 40px 10px rgba(244, 59, 71, 0.4);
@@ -93,15 +94,15 @@ body,
 }
 .app-container .chat-container .chat-header .dot:nth-child(1) {
   -webkit-animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.3s both;
-          animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.3s both;
+  animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.3s both;
 }
 .app-container .chat-container .chat-header .dot:nth-child(2) {
   -webkit-animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
-          animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
+  animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
 }
 .app-container .chat-container .chat-header .dot:nth-child(3) {
   -webkit-animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.7s both;
-          animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.7s both;
+  animation: grow 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.7s both;
 }
 .app-container .chat-container .msg-container {
   background: rgba(255, 255, 255, 0.2);
@@ -119,7 +120,11 @@ body,
   flex: none;
   display: flex;
 }
-.app-container .chat-container .msg-container .assistant-message-container .assistant-avatar {
+.app-container
+  .chat-container
+  .msg-container
+  .assistant-message-container
+  .assistant-avatar {
   background-image: url("https://zephyo.github.io/22Days/code/10/graphics/cutebearicon.gif");
   background-size: cover;
   background-position: center;
@@ -128,9 +133,13 @@ body,
   height: 52px;
   margin-right: 1vw;
 }
-.app-container .chat-container .msg-container .assistant-message-container:first-child .chat-bubble {
+.app-container
+  .chat-container
+  .msg-container
+  .assistant-message-container:first-child
+  .chat-bubble {
   -webkit-animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.9s both;
-          animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.9s both;
+  animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.9s both;
 }
 .app-container .chat-container .msg-container .chat-bubble {
   display: inline-block;
@@ -142,11 +151,11 @@ body,
   word-wrap: break-word;
   word-break: break-word;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   opacity: 0;
   -webkit-animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) forwards;
-          animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) forwards;
+  animation: pop 0.3s cubic-bezier(0.36, -0.04, 0.15, 1.64) forwards;
   will-change: transform;
 }
 .app-container .chat-container .msg-container .chat-bubble.user {
@@ -164,7 +173,7 @@ body,
 }
 .app-container .chat-container .input-container {
   -webkit-animation: up 0.35s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
-          animation: up 0.35s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
+  animation: up 0.35s cubic-bezier(0.36, -0.04, 0.15, 1.64) 0.5s both;
   border: 4px solid #453a94;
   border-top: 0;
   border-radius: 0 0 12px 12px;
@@ -183,7 +192,7 @@ body,
   background: transparent;
   border: none;
   font-family: "Inconsolata";
-  color:#453a94;
+  color: #453a94;
   font-size: 1rem;
   padding: 1.5rem;
 }
