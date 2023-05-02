@@ -3,11 +3,10 @@ import "./App.css";
 
 const data = {
   headerText: "Hello hello ✨",
-  pText: "I'm a cute chatbot!",
-  p2Text: "I can help you with your horoscope",
+  pText: "I'm a brilliant chatbot!",
+  p2Text: "I can help you with literally ANYTHING (except using your horoscope to time the real estate market)",
   conversation: [
     { role: "assistant", message: "Hello, how can I help you today?" },
-    { role: "user", message: "I need a horoscope reading" },
   ],
   isLoading: false
 };
